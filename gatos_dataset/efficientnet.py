@@ -33,7 +33,7 @@ gerador_treino = ImageDataGenerator(
     zoom_range=0.2,
     shear_range=0.2,
     fill_mode='nearest',
-    validation_split=0.2  # 20% para validação
+    validation_split=0.2 
 )
 
 # Gerador para teste (apenas normalização)
