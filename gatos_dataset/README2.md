@@ -47,6 +47,4 @@ streamlit run app.py
 
 1. O aplicativo salva o modelo treinado como `classificador_racas_gatos_streamlit.h5`
 
-2. As métricas na aba "Análise" são simuladas. Em produção, você deve calcular essas métricas usando o conjunto de teste real. 
-
-3. Detalhe: o site sópermite carregar apenas uma imagem, para carregar outra, tem que limpar o cache, fechar o site no terminal e abri-lo novamente. 
+2. Detalhe: o site sópermite carregar apenas uma imagem, para carregar outra, tem que limpar o cache, fechar o site no terminal e abri-lo novamente. 
