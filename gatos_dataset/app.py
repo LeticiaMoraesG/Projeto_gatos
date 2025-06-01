@@ -111,18 +111,10 @@ def criar_modelo():
     return modelo, modelo_base
 
 def calcular_metricas_avaliacao(modelo, dados_teste):
-    """Calcula métricas detalhadas do modelo"""
-    # Fazer predições
     y_pred = modelo.predict(dados_teste, verbose=0)
     y_pred_classes = np.argmax(y_pred, axis=1)
-    
-    # Obter labels verdadeiros
     y_true = dados_teste.classes
-    
-    # Matriz de confusão
     cm = confusion_matrix(y_true, y_pred_classes)
-    
-    # Relatório de classificação
     report = classification_report(y_true, y_pred_classes, 
                                  target_names=RACAS, output_dict=True)
     
@@ -277,13 +269,12 @@ with aba1:
                     
                     st.info("🏃 Treinamento em andamento...")
                     
-                    # TREINAMENTO REAL
                     historico = modelo.fit(
                         dados_treino,
                         epochs=EPOCAS,
                         validation_data=dados_validacao,
                         callbacks=[checkpoint, parada_precoce, callback_streamlit],
-                        verbose=0  # Silenciar saída padrão do Keras
+                        verbose=0 
                     )
                     
                     st.success("✅ Treinamento concluído!")
@@ -383,8 +374,6 @@ with aba2:
                 st.subheader("📷 Imagem Original")
                 imagem = Image.open(arquivo_enviado)
                 st.image(imagem, use_column_width=True)
-                
-                # Informações da imagem
                 st.caption(f"Dimensões: {imagem.size[0]} x {imagem.size[1]}")
                 st.caption(f"Formato: {imagem.format}")
             
@@ -396,15 +385,14 @@ with aba2:
                 array_img = np.array(img)
                 
                 # Verificar se a imagem tem 3 canais (RGB)
-                if len(array_img.shape) == 2:  # Imagem em escala de cinza
+                if len(array_img.shape) == 2:
                     array_img = np.stack([array_img] * 3, axis=-1)
-                elif array_img.shape[2] == 4:  # Imagem RGBA
+                elif array_img.shape[2] == 4:
                     array_img = array_img[:, :, :3]
                 
                 array_img = np.expand_dims(array_img, axis=0)
                 array_img = array_img / 255.0
                 
-                # Fazer predição REAL
                 with st.spinner("Analisando..."):
                     predicoes = modelo.predict(array_img, verbose=0)
                     indice_predito = np.argmax(predicoes[0])
@@ -421,7 +409,7 @@ with aba2:
                 # Mostrar todas as probabilidades
                 st.markdown("#### Probabilidades por Raça:")
                 
-                # Criar DataFrame com resultados REAIS
+                # Criar DataFrame com resultados
                 df_resultados = pd.DataFrame({
                     'Raça': [f"{EMOJIS_RACAS[raca]} {raca.replace('_', ' ').title()}" for raca in RACAS],
                     'Probabilidade': [f"{predicoes[0][i]:.1%}" for i in range(NUM_RACAS)],
@@ -467,7 +455,7 @@ with aba3:
     
     if st.session_state.get('modelo_treinado', False) and 'avaliacao_teste' in st.session_state:
         
-        # Métricas REAIS
+        # Métricas
         st.subheader("📊 Métricas de Performance")
         
         avaliacao = st.session_state['avaliacao_teste']
@@ -475,7 +463,7 @@ with aba3:
         
         col1, col2, col3, col4 = st.columns(4)
         
-        # Valores REAIS do modelo
+        # Valores do modelo
         acuracia_final = avaliacao['acuracia']
         perda_final = avaliacao['perda']
         
@@ -492,7 +480,7 @@ with aba3:
         col3.metric("Precisão Média", f"{precisao_media:.1%}")
         col4.metric("Recall Médio", f"{recall_medio:.1%}")
         
-        # Matriz de Confusão REAL
+        # Matriz de Confusão
         if 'matriz_confusao' in st.session_state:
             st.subheader("🎯 Matriz de Confusão")
             
@@ -506,7 +494,7 @@ with aba3:
             ax.set_ylabel('Verdadeiro')
             st.pyplot(fig)
         
-        # Métricas por classe REAIS
+        # Métricas por classe
         if relatorio:
             st.subheader("📈 Performance por Raça")
             
@@ -529,7 +517,7 @@ with aba3:
                 hide_index=True
             )
             
-            # Gráfico radar com dados REAIS
+            # Gráfico radar com dados
             st.subheader("🕸️ Comparação de Métricas")
             
             categorias = ['Precisão', 'Recall', 'F1-Score']
@@ -561,7 +549,7 @@ with aba3:
             
             st.pyplot(fig)
             
-        # Mostrar histórico de treinamento REAL
+        # Mostrar histórico de treinamento
         if 'historico_treinamento' in st.session_state:
             st.subheader("📈 Histórico de Treinamento Detalhado")
             
