@@ -93,7 +93,6 @@ def criar_modelo():
     
     return modelo, modelo_base
 
-# Criar o modelo
 modelo, modelo_base = criar_modelo()
 
 # Compilar o modelo
@@ -213,9 +212,6 @@ plotar_historico_treinamento(historico, historico_ajuste)
 
 # Função para fazer predições em novas imagens
 def prever_raca_gato(caminho_imagem, modelo):
-    """
-    Prediz a raça de um gato a partir de uma imagem
-    """
     # Carregar e preprocessar a imagem
     img = tf.keras.preprocessing.image.load_img(caminho_imagem, target_size=TAMANHO_IMG)
     array_img = tf.keras.preprocessing.image.img_to_array(img)
@@ -269,7 +265,3 @@ print(classification_report(y_verdadeiro, y_previsto, target_names=RACAS))
 # Salvar o modelo final
 modelo.save('classificador_racas_gatos_final.h5')
 print("\nModelo salvo como 'classificador_racas_gatos_final.h5'")
-
-# Exemplo de uso para predição
-# Para usar o modelo em uma nova imagem:
-# prever_raca_gato('caminho/para/nova/imagem.jpg', modelo)
