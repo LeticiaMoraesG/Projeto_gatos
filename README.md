@@ -1,13 +1,31 @@
-# Projeto_gatos
+<h1>🐾 Projeto Gatos</h1>
 
-<b> Grupo: </b>
-<br>
-Giovana Ribeiro de Francisco - 10297494
-<br>
-Leila Akina Ino - 10402951
-<br>
-Letícia Moraes Gutierrez de Oliveira - 10400969
-<br>
-<br>
-Dentro da pasta gatos_dataset há duas pastas, que realmente são parte do dataset, uma pasta `treino` com as imagens de treino e uma pasta `teste`, com as imagens de teste, Cada uma delas com quatro pastas uma correspondente a cada raca, `Maine Coon`, `Sphynx`, `Persa` e `Siamês`.<br><br>
-Também temos 4 arquivos, o arquivo com o modelo em si o `efficientnet.py` que tem o seu prórpio ReadMe, o `README1.md`, e outro arquivo `app.py`, que é o arquivo do aplicativo streamlit, que também tem um ReadMe próprio, é o `README2.md`
+<b>👥 Grupo:</b><br>
+Giovana Ribeiro de Francisco – 10297494<br>
+Leila Akina Ino – 10402951<br>
+Letícia Moraes Gutierrez de Oliveira – 10400969<br><br>
+
+<b>📂 Estrutura do Projeto:</b><br>
+Dentro da pasta <code>gatos_dataset</code>, há duas subpastas principais:<br>
+<ul>
+  <li><b><code>treino/</code></b> – Contém as imagens utilizadas para o treinamento do modelo.</li>
+  <li><b><code>teste/</code></b> – Contém as imagens utilizadas para testar o modelo.</li>
+</ul>
+
+Cada uma dessas pastas possui quatro subpastas, correspondentes às raças de gatos:<br>
+<ul>
+  <li>🐱 <code>Maine Coon</code></li>
+  <li>🐱 <code>Sphynx</code></li>
+  <li>🐱 <code>Persa</code></li>
+  <li>🐱 <code>Siamês</code></li>
+</ul>
+
+<b>📄 Arquivos principais:</b><br>
+<ul>
+  <li><code>efficientnet.py</code> – Contém a implementação do modelo baseado na arquitetura EfficientNet.<br>
+    📘 Documentação adicional: <code>README1.md</code>
+  </li><br>
+  <li><code>app.py</code> – Aplicação desenvolvida com Streamlit para interação com o modelo.<br>
+    📘 Documentação adicional: <code>README2.md</code>
+  </li>
+</ul>
