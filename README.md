@@ -7,6 +7,7 @@ Letícia Moraes Gutierrez de Oliveira – 10400969<br><br>
 
 <b>📂 Estrutura do Projeto:</b><br>
 O texto sobre o projeto está nesse arquivo <code>Classificação Automática de Raças de Gatos Utilizando Transfer Learning com EfficientNet (2).pdf</code><br>
+O link para o vídeo no Youtube esta aqui:
 Dentro da pasta <code>gatos_dataset</code>, há duas subpastas principais:<br>
 <ul>
   <li><b><code>treino/</code></b> – Contém as imagens utilizadas para o treinamento do modelo.</li>
