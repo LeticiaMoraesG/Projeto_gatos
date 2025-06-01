@@ -28,5 +28,6 @@ Cada uma dessas pastas possui quatro subpastas, correspondentes às raças de ga
   <li><code>app.py</code> – Aplicação desenvolvida com Streamlit para interação com o modelo.<br>
     📘 Documentação adicional: <code>README2.md</code>
   </li><br>
-  <li>colab - https://colab.research.google.com/drive/1vEVjzTx3BH0DasYBFMgl-VJbpNaPhSBs#scrollTo=3f6pPBkfCz-l</li>
+  <li><code>Projeto_semestral_template.ipynb</code> - Notebook do modelo feito.<br>
+    📘Link para o colab - https://colab.research.google.com/drive/1vEVjzTx3BH0DasYBFMgl-VJbpNaPhSBs#scrollTo=3f6pPBkfCz-l</li>
 </ul>
