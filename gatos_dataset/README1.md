@@ -57,5 +57,5 @@ python efficientnet.py
 modelo = tf.keras.models.load_model('classificador_racas_gatos_final.h5')
 
 # Fazer predição
-predict_cat_breed('caminho/para/imagem_gato.jpg', modelo)
+prever_raca_gato('caminho/para/imagem_gato.jpg', modelo)
 ```
