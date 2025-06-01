@@ -47,4 +47,4 @@ streamlit run app.py
 
 1. O aplicativo salva o modelo treinado como `classificador_racas_gatos_streamlit.h5`
 
-2. Detalhe: o site sópermite carregar apenas uma imagem, para carregar outra, tem que limpar o cache, fechar o site no terminal e abri-lo novamente. 
+2. Detalhe: o site só permite carregar apenas uma imagem, para carregar outra, tem que limpar o cache, fechar o site no terminal e abri-lo novamente. 
